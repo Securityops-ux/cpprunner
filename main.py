@@ -18,8 +18,10 @@ def validate_token(token: str):
         decoded = jwt.decode(token, CPP_KEY, algorithms=[ALGORITHM])
         return decoded
     except ExpiredSignatureError:
+        print(token)
         raise HTTPException(status_code=403, detail="Token Expired")
     except (InvalidSignatureError, InvalidTokenError):
+        print(token)
         raise HTTPException(status_code=401, detail="Invalid Token")
 
 class CppModel(BaseModel):
