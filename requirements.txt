@@ -1,5 +1,5 @@
 fastapi
 uvicorn
 pydantic
-jwt
+PyJWT>=2.7.0
 
