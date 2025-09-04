@@ -13,6 +13,7 @@ ALGORITHM = "HS256"
 
 def validate_token(token: str):
     CPP_KEY = os.getenv("CPP_KEY")
+    print(CPP_KEY)
     try:
         decoded = jwt.decode(token, CPP_KEY, algorithms=[ALGORITHM])
         return decoded
