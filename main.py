@@ -5,7 +5,7 @@ import resource
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
 import jwt
-from jwt import ExpiredSignatureError, InvalidSignatureError, InvalidTokenError
+from jwt.exceptions import ExpiredSignatureError, InvalidSignatureError, InvalidTokenError
 from typing import List
 
 app = FastAPI()
