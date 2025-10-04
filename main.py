@@ -9,6 +9,19 @@ from jwt.exceptions import ExpiredSignatureError, InvalidSignatureError, Invalid
 from typing import List
 
 app = FastAPI()
+
+origins = [
+    "*"  # For testing: allow all origins. In production, use specific domains.
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # GET, POST, PUT, DELETE, etc.
+    allow_headers=["*"],  # Allow custom headers like CPP_TOKEN
+)
+
 ALGORITHM = "HS256"
 
 def validate_token(token: str):
