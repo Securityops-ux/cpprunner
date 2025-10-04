@@ -7,6 +7,7 @@ from pydantic import BaseModel
 import jwt
 from jwt.exceptions import ExpiredSignatureError, InvalidSignatureError, InvalidTokenError
 from typing import List
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
